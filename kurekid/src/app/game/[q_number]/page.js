@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation'
 const questions = {
   '1': {
     id: 1,
-    title: "Question 1",
+    title: "What is your name",
     coverImage: "cover.png",
     coverVideo: null,
     options: [
@@ -35,7 +35,7 @@ const questions = {
   },
   '2': {
     id: 2,
-    title: "Question 2",
+    title: "What are you doing",
     coverImage: "cover.png",
     coverVideo: null,
     options: [
@@ -106,9 +106,7 @@ export default function Page() {
   return (
     <>
       <h1>Hi {q_number}</h1>
-      <Question question_id='1'></Question>
-      <hr></hr>
-      <Question question_id='2'></Question>
+      <Question question_id={q_number}></Question>
     </>
   )
 }
