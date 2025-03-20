@@ -12,21 +12,25 @@ const questions = {
     options: [
       {
         id: 1,
+        correctOption: false,
         text: "Option 1",
         img: "img.png",
       },
       {
         id: 2,
+        correctOption: true,
         text: "Option 2",
         img: "img.png"
       },
       {
         id: 3,
+        correctOption: false,
         text: "Option 3",
         img: "img.png"
       },
       {
         id: 4,
+        correctOption: false,
         text: "Option 4",
         img: "img.png"
       }
@@ -41,21 +45,25 @@ const questions = {
     options: [
       {
         id: 1,
+        correctOption: false,
         text: "Option 1",
         img: "img.png",
       },
       {
         id: 2,
+        correctOption: false,
         text: "Option 2",
         img: "img.png"
       },
       {
         id: 3,
+        correctOption: true,
         text: "Option 3",
         img: "img.png"
       },
       {
         id: 4,
+        correctOption: false,
         text: "Option 4",
         img: "img.png"
       }
@@ -65,15 +73,19 @@ const questions = {
 }
 
 function optionClicked(data) {
-  console.log("option id: " + data.id)
+  if (data.correctOption) {
+    console.log("YAAAA!! Correct!")
+  }
+  console.log("option id: " + data.id);
+
 }
 
 function Option({ option }) {
   return (
-    <div onClick={optionClicked(option)}>
+    <button onClick={()=>optionClicked(option)}>
       <h5>{option.id}</h5>
       <h2>{option.text}</h2>
-    </div>
+    </button>
   )
 }
 
