@@ -1,124 +1,39 @@
-'use client'
+"use client";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 
-import { useParams } from 'next/navigation'
+export default function QuestionPage() {
+    const { id } = useParams();
+    const [question, setQuestion] = useState(null);
 
-
-const questions = {
-  '1': {
-    id: 1,
-    title: "What is your name",
-    coverImage: "cover.png",
-    coverVideo: null,
-    options: [
-      {
-        id: 1,
-        correctOption: false,
-        text: "Option 1",
-        img: "img.png",
-      },
-      {
-        id: 2,
-        correctOption: true,
-        text: "Option 2",
-        img: "img.png"
-      },
-      {
-        id: 3,
-        correctOption: false,
-        text: "Option 3",
-        img: "img.png"
-      },
-      {
-        id: 4,
-        correctOption: false,
-        text: "Option 4",
-        img: "img.png"
-      }
-    ],
-    correctOptionId: 2
-  },
-  '2': {
-    id: 2,
-    title: "What are you doing",
-    coverImage: "cover.png",
-    coverVideo: null,
-    options: [
-      {
-        id: 1,
-        correctOption: false,
-        text: "Option 1",
-        img: "img.png",
-      },
-      {
-        id: 2,
-        correctOption: false,
-        text: "Option 2",
-        img: "img.png"
-      },
-      {
-        id: 3,
-        correctOption: true,
-        text: "Option 3",
-        img: "img.png"
-      },
-      {
-        id: 4,
-        correctOption: false,
-        text: "Option 4",
-        img: "img.png"
-      }
-    ],
-    correctOptionId: 2
-  }
-}
-
-function optionClicked(data) {
-  if (data.correctOption) {
-    console.log("YAAAA!! Correct!")
-  }
-  console.log("option id: " + data.id);
-
-}
-
-function Option({ option }) {
-  return (
-    <button onClick={()=>optionClicked(option)}>
-      <h5>{option.id}</h5>
-      <h2>{option.text}</h2>
-    </button>
-  )
-}
-
-function Question({ question_id }) {
-  const questionData = questions[question_id];
-  if (!questionData) { return ( <h3>Question {question_id} not found!</h3> ) }
-
-  return (
-    <div>
-
-      <h1>{ questionData.title }</h1>
-
-      <div className='options'>
-
-        {
-          questionData.options.map( (option) => ( <Option key={option.id} option={option}></Option> ) )
+    useEffect(() => {
+        async function fetchQuestion() {
+            try {
+                const res = await fetch(`http://localhost:8000/scenario/${id}`);
+                const data = await res.json();
+                setQuestion(data);
+            } catch (error) {
+                console.error("Error fetching question:", error);
+            }
         }
 
-      </div>
+        if (id) fetchQuestion();
+    }, [id]);
 
-    </div>
-  )
+    if (!question) return <p>Loading...</p>;
 
-}
-
-
-export default function Page() {
-  const { q_number } = useParams();
-
-  return (
-    <>
-      <h1>Hi {q_number}</h1>
-      <Question question_id={q_number}></Question>
-    </>
-  )
+    return (
+        <div className="p-6">
+            <h1 className="text-2xl font-bold">{question.title}</h1>
+            <p className="mt-2">{question.description}</p>
+            <h2 className="mt-4 font-semibold">Options:</h2>
+            <ul className="list-disc pl-5">
+                {Object.values(question.options).map((option) => (
+                    <li key={option.id} className="mt-1">
+                        {option.title}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }

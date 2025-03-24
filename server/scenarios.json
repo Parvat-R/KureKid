@@ -1,0 +1,1082 @@
+{
+    "q1": {
+        "id": "1",
+        "title": "Sharing Toys",
+        "description": "Sam is playing with blocks. Emma wants to play too. What should Sam do?",
+        "options": {
+            "op1": {
+                "id": "1a",
+                "title": "Share some blocks with Emma",
+                "correct": true
+            },
+            "op2": {
+                "id": "1b",
+                "title": "Hide all the blocks",
+                "correct": false
+            },
+            "op3": {
+                "id": "1c",
+                "title": "Tell Emma to go away",
+                "correct": false
+            },
+            "op4": {
+                "id": "1d",
+                "title": "Ignore Emma completely",
+                "correct": false
+            }
+        }
+    },
+    "q2": {
+        "id": "2",
+        "title": "Saying Thank You",
+        "description": "Ben's teacher gives him a sticker for good work. What should Ben say?",
+        "options": {
+            "op1": {
+                "id": "2a",
+                "title": "Say nothing",
+                "correct": false
+            },
+            "op2": {
+                "id": "2b",
+                "title": "Say 'I wanted a bigger one'",
+                "correct": false
+            },
+            "op3": {
+                "id": "2c",
+                "title": "Say 'Thank you'",
+                "correct": true
+            },
+            "op4": {
+                "id": "2d",
+                "title": "Take the sticker without looking",
+                "correct": false
+            }
+        }
+    },
+    "q3": {
+        "id": "3",
+        "title": "Feeling Faces",
+        "description": "Lily sees her friend crying. How is her friend feeling?",
+        "options": {
+            "op1": {
+                "id": "3a",
+                "title": "Happy",
+                "correct": false
+            },
+            "op2": {
+                "id": "3b",
+                "title": "Sad",
+                "correct": true
+            },
+            "op3": {
+                "id": "3c",
+                "title": "Excited",
+                "correct": false
+            },
+            "op4": {
+                "id": "3d",
+                "title": "Sleepy",
+                "correct": false
+            }
+        }
+    },
+    "q4": {
+        "id": "4",
+        "title": "Making Friends",
+        "description": "Alex is new at school and wants to make friends. What can Alex do?",
+        "options": {
+            "op1": {
+                "id": "4a",
+                "title": "Hide in the corner",
+                "correct": false
+            },
+            "op2": {
+                "id": "4b",
+                "title": "Say 'Can I play with you?'",
+                "correct": true
+            },
+            "op3": {
+                "id": "4c",
+                "title": "Take toys from other kids",
+                "correct": false
+            },
+            "op4": {
+                "id": "4d",
+                "title": "Cry until someone talks to him",
+                "correct": false
+            }
+        }
+    },
+    "q5": {
+        "id": "5",
+        "title": "Washing Hands",
+        "description": "Jack has just used the bathroom. What should he do next?",
+        "options": {
+            "op1": {
+                "id": "5a",
+                "title": "Go straight to lunch",
+                "correct": false
+            },
+            "op2": {
+                "id": "5b",
+                "title": "Wash his hands with soap and water",
+                "correct": true
+            },
+            "op3": {
+                "id": "5c",
+                "title": "Wipe his hands on his shirt",
+                "correct": false
+            },
+            "op4": {
+                "id": "5d",
+                "title": "Just rinse with water quickly",
+                "correct": false
+            }
+        }
+    },
+    "q6": {
+        "id": "6",
+        "title": "Quiet Time",
+        "description": "The teacher is reading a story to the class. What should you do?",
+        "options": {
+            "op1": {
+                "id": "6a",
+                "title": "Talk loudly to your friend",
+                "correct": false
+            },
+            "op2": {
+                "id": "6b",
+                "title": "Run around the room",
+                "correct": false
+            },
+            "op3": {
+                "id": "6c",
+                "title": "Listen quietly",
+                "correct": true
+            },
+            "op4": {
+                "id": "6d",
+                "title": "Play with your toys",
+                "correct": false
+            }
+        }
+    },
+    "q7": {
+        "id": "7",
+        "title": "Helping at Home",
+        "description": "Mom is making dinner and looks tired. What could you do?",
+        "options": {
+            "op1": {
+                "id": "7a",
+                "title": "Ask if you can help set the table",
+                "correct": true
+            },
+            "op2": {
+                "id": "7b",
+                "title": "Turn on the TV very loud",
+                "correct": false
+            },
+            "op3": {
+                "id": "7c",
+                "title": "Keep asking when dinner will be ready",
+                "correct": false
+            },
+            "op4": {
+                "id": "7d",
+                "title": "Make a mess in the living room",
+                "correct": false
+            }
+        }
+    },
+    "q8": {
+        "id": "8",
+        "title": "Taking Turns",
+        "description": "There is only one swing at the playground and two children want to use it. What should they do?",
+        "options": {
+            "op1": {
+                "id": "8a",
+                "title": "The bigger child should always get the swing",
+                "correct": false
+            },
+            "op2": {
+                "id": "8b",
+                "title": "Take turns and count to 20 for each turn",
+                "correct": true
+            },
+            "op3": {
+                "id": "8c",
+                "title": "Whoever runs faster gets the swing",
+                "correct": false
+            },
+            "op4": {
+                "id": "8d",
+                "title": "Go home and don't play",
+                "correct": false
+            }
+        }
+    },
+    "q9": {
+        "id": "9",
+        "title": "When You're Angry",
+        "description": "Zoe feels angry because someone broke her toy. What's a good thing for Zoe to do?",
+        "options": {
+            "op1": {
+                "id": "9a",
+                "title": "Break their toy too",
+                "correct": false
+            },
+            "op2": {
+                "id": "9b",
+                "title": "Yell and hit people",
+                "correct": false
+            },
+            "op3": {
+                "id": "9c",
+                "title": "Take deep breaths and tell an adult",
+                "correct": true
+            },
+            "op4": {
+                "id": "9d",
+                "title": "Run away from school",
+                "correct": false
+            }
+        }
+    },
+    "q10": {
+        "id": "10",
+        "title": "Meeting Someone New",
+        "description": "A new child joins your class. What's a friendly thing to do?",
+        "options": {
+            "op1": {
+                "id": "10a",
+                "title": "Stare at them but don't talk",
+                "correct": false
+            },
+            "op2": {
+                "id": "10b",
+                "title": "Smile and say 'Hi, I'm [name]. What's your name?'",
+                "correct": true
+            },
+            "op3": {
+                "id": "10c",
+                "title": "Tell them they can't play with your toys",
+                "correct": false
+            },
+            "op4": {
+                "id": "10d",
+                "title": "Ignore them completely",
+                "correct": false
+            }
+        }
+    },
+    "q11": {
+        "id": "11",
+        "title": "Indoor Voice",
+        "description": "You're excited about a new toy at the library. How should you talk?",
+        "options": {
+            "op1": {
+                "id": "11a",
+                "title": "Shout as loud as you can",
+                "correct": false
+            },
+            "op2": {
+                "id": "11b",
+                "title": "Use a quiet, inside voice",
+                "correct": true
+            },
+            "op3": {
+                "id": "11c",
+                "title": "Cry until everyone looks at you",
+                "correct": false
+            },
+            "op4": {
+                "id": "11d",
+                "title": "Don't talk at all",
+                "correct": false
+            }
+        }
+    },
+    "q12": {
+        "id": "12",
+        "title": "Someone Falls Down",
+        "description": "Your friend falls down on the playground. What should you do?",
+        "options": {
+            "op1": {
+                "id": "12a",
+                "title": "Laugh at them",
+                "correct": false
+            },
+            "op2": {
+                "id": "12b",
+                "title": "Walk away quickly",
+                "correct": false
+            },
+            "op3": {
+                "id": "12c",
+                "title": "Ask if they're okay and help them up",
+                "correct": true
+            },
+            "op4": {
+                "id": "12d",
+                "title": "Tell everyone what happened",
+                "correct": false
+            }
+        }
+    },
+    "q13": {
+        "id": "13",
+        "title": "Healthy Snack Choice",
+        "description": "It's snack time. Which is the healthiest choice?",
+        "options": {
+            "op1": {
+                "id": "13a",
+                "title": "Chocolate candy",
+                "correct": false
+            },
+            "op2": {
+                "id": "13b",
+                "title": "Potato chips",
+                "correct": false
+            },
+            "op3": {
+                "id": "13c",
+                "title": "Apple slices",
+                "correct": true
+            },
+            "op4": {
+                "id": "13d",
+                "title": "Soda",
+                "correct": false
+            }
+        }
+    },
+    "q14": {
+        "id": "14",
+        "title": "Waiting Your Turn",
+        "description": "Everyone is lining up for lunch. What should you do?",
+        "options": {
+            "op1": {
+                "id": "14a",
+                "title": "Push to the front of the line",
+                "correct": false
+            },
+            "op2": {
+                "id": "14b",
+                "title": "Stand in line and wait your turn",
+                "correct": true
+            },
+            "op3": {
+                "id": "14c",
+                "title": "Cut in front of your friend",
+                "correct": false
+            },
+            "op4": {
+                "id": "14d",
+                "title": "Sit down and refuse to line up",
+                "correct": false
+            }
+        }
+    },
+    "q15": {
+        "id": "15",
+        "title": "When You Need Help",
+        "description": "You can't open your juice box. What should you do?",
+        "options": {
+            "op1": {
+                "id": "15a",
+                "title": "Throw it on the floor",
+                "correct": false
+            },
+            "op2": {
+                "id": "15b",
+                "title": "Try once and give up",
+                "correct": false
+            },
+            "op3": {
+                "id": "15c",
+                "title": "Politely ask a teacher or friend for help",
+                "correct": true
+            },
+            "op4": {
+                "id": "15d",
+                "title": "Go thirsty and don't drink anything",
+                "correct": false
+            }
+        }
+    },
+    "q16": {
+        "id": "16",
+        "title": "Bedtime Routine",
+        "description": "It's almost bedtime. What should you do first?",
+        "options": {
+            "op1": {
+                "id": "16a",
+                "title": "Start playing with loud toys",
+                "correct": false
+            },
+            "op2": {
+                "id": "16b",
+                "title": "Ask for many glasses of water",
+                "correct": false
+            },
+            "op3": {
+                "id": "16c",
+                "title": "Brush your teeth and wash your face",
+                "correct": true
+            },
+            "op4": {
+                "id": "16d",
+                "title": "Hide from your parents",
+                "correct": false
+            }
+        }
+    },
+    "q17": {
+        "id": "17",
+        "title": "Someone Looks Sad",
+        "description": "Your friend looks sad today. What could you do?",
+        "options": {
+            "op1": {
+                "id": "17a",
+                "title": "Ignore them completely",
+                "correct": false
+            },
+            "op2": {
+                "id": "17b",
+                "title": "Ask if they're okay or want to play",
+                "correct": true
+            },
+            "op3": {
+                "id": "17c",
+                "title": "Tell them to stop being sad",
+                "correct": false
+            },
+            "op4": {
+                "id": "17d",
+                "title": "Talk only about yourself",
+                "correct": false
+            }
+        }
+    },
+    "q18": {
+        "id": "18",
+        "title": "Crossing the Street",
+        "description": "You want to cross the street. What's the safe way to do it?",
+        "options": {
+            "op1": {
+                "id": "18a",
+                "title": "Run across quickly without looking",
+                "correct": false
+            },
+            "op2": {
+                "id": "18b",
+                "title": "Hold an adult's hand, look both ways, and use the crosswalk",
+                "correct": true
+            },
+            "op3": {
+                "id": "18c",
+                "title": "Cross whenever you want to",
+                "correct": false
+            },
+            "op4": {
+                "id": "18d",
+                "title": "Close your eyes while crossing",
+                "correct": false
+            }
+        }
+    },
+    "q19": {
+        "id": "19",
+        "title": "Someone Has Different Food",
+        "description": "A friend brings food to lunch that looks different from yours. What should you do?",
+        "options": {
+            "op1": {
+                "id": "19a",
+                "title": "Say their food looks yucky",
+                "correct": false
+            },
+            "op2": {
+                "id": "19b",
+                "title": "Take their food without asking",
+                "correct": false
+            },
+            "op3": {
+                "id": "19c",
+                "title": "Be kind and enjoy your own food",
+                "correct": true
+            },
+            "op4": {
+                "id": "19d",
+                "title": "Tell everyone to stay away from their food",
+                "correct": false
+            }
+        }
+    },
+    "q20": {
+        "id": "20",
+        "title": "Morning Routine",
+        "description": "You just woke up. What's a good thing to do first?",
+        "options": {
+            "op1": {
+                "id": "20a",
+                "title": "Go outside to play",
+                "correct": false
+            },
+            "op2": {
+                "id": "20b",
+                "title": "Turn on loud music",
+                "correct": false
+            },
+            "op3": {
+                "id": "20c",
+                "title": "Use the bathroom and wash your hands",
+                "correct": true
+            },
+            "op4": {
+                "id": "20d",
+                "title": "Go back to sleep",
+                "correct": false
+            }
+        }
+    },
+    "q21": {
+        "id": "21",
+        "title": "Dropping Something",
+        "description": "You dropped your crayons on the floor. What should you do?",
+        "options": {
+            "op1": {
+                "id": "21a",
+                "title": "Leave them there for someone else to pick up",
+                "correct": false
+            },
+            "op2": {
+                "id": "21b",
+                "title": "Pick them up and put them away",
+                "correct": true
+            },
+            "op3": {
+                "id": "21c",
+                "title": "Step on them",
+                "correct": false
+            },
+            "op4": {
+                "id": "21d",
+                "title": "Throw more things on the floor",
+                "correct": false
+            }
+        }
+    },
+    "q22": {
+        "id": "22",
+        "title": "Someone Says Hello",
+        "description": "A neighbor says 'Hello' to you. What could you do?",
+        "options": {
+            "op1": {
+                "id": "22a",
+                "title": "Run away quickly",
+                "correct": false
+            },
+            "op2": {
+                "id": "22b",
+                "title": "Look down and say nothing",
+                "correct": false
+            },
+            "op3": {
+                "id": "22c",
+                "title": "Say 'Hello' back and smile",
+                "correct": true
+            },
+            "op4": {
+                "id": "22d",
+                "title": "Shout at them",
+                "correct": false
+            }
+        }
+    },
+    "q23": {
+        "id": "23",
+        "title": "Using Tissues",
+        "description": "Your nose is runny. What should you do?",
+        "options": {
+            "op1": {
+                "id": "23a",
+                "title": "Wipe it on your sleeve",
+                "correct": false
+            },
+            "op2": {
+                "id": "23b",
+                "title": "Use a tissue and throw it in the trash",
+                "correct": true
+            },
+            "op3": {
+                "id": "23c",
+                "title": "Let it keep running",
+                "correct": false
+            },
+            "op4": {
+                "id": "23d",
+                "title": "Wipe it on a friend's shirt",
+                "correct": false
+            }
+        }
+    },
+    "q24": {
+        "id": "24",
+        "title": "When You're Tired",
+        "description": "You feel very tired during story time. What should you do?",
+        "options": {
+            "op1": {
+                "id": "24a",
+                "title": "Yell that you're bored",
+                "correct": false
+            },
+            "op2": {
+                "id": "24b",
+                "title": "Sit quietly and rest",
+                "correct": true
+            },
+            "op3": {
+                "id": "24c",
+                "title": "Poke the child next to you",
+                "correct": false
+            },
+            "op4": {
+                "id": "24d",
+                "title": "Run around the room",
+                "correct": false
+            }
+        }
+    },
+    "q25": {
+        "id": "25",
+        "title": "Borrowing Things",
+        "description": "You want to use your sister's toy. What should you do first?",
+        "options": {
+            "op1": {
+                "id": "25a",
+                "title": "Take it without asking",
+                "correct": false
+            },
+            "op2": {
+                "id": "25b",
+                "title": "Hide her toy so she can't find it",
+                "correct": false
+            },
+            "op3": {
+                "id": "25c",
+                "title": "Ask politely if you can borrow it",
+                "correct": true
+            },
+            "op4": {
+                "id": "25d",
+                "title": "Cry until she gives it to you",
+                "correct": false
+            }
+        }
+    },
+    "q26": {
+        "id": "26",
+        "title": "Spilling a Drink",
+        "description": "You accidentally spill your juice. What should you do?",
+        "options": {
+            "op1": {
+                "id": "26a",
+                "title": "Pretend it wasn't you",
+                "correct": false
+            },
+            "op2": {
+                "id": "26b",
+                "title": "Tell an adult and help clean it up",
+                "correct": true
+            },
+            "op3": {
+                "id": "26c",
+                "title": "Walk away from the mess",
+                "correct": false
+            },
+            "op4": {
+                "id": "26d",
+                "title": "Blame someone else",
+                "correct": false
+            }
+        }
+    },
+    "q27": {
+        "id": "27",
+        "title": "Too Much Noise",
+        "description": "The room is very noisy and it's bothering you. What can you do?",
+        "options": {
+            "op1": {
+                "id": "27a",
+                "title": "Scream louder than everyone",
+                "correct": false
+            },
+            "op2": {
+                "id": "27b",
+                "title": "Cover your ears or ask to go to a quiet space",
+                "correct": true
+            },
+            "op3": {
+                "id": "27c",
+                "title": "Push other children",
+                "correct": false
+            },
+            "op4": {
+                "id": "27d",
+                "title": "Throw your toys",
+                "correct": false
+            }
+        }
+    },
+    "q28": {
+        "id": "28",
+        "title": "Saying Sorry",
+        "description": "You accidentally bump into your friend. What should you say?",
+        "options": {
+            "op1": {
+                "id": "28a",
+                "title": "Say nothing and walk away",
+                "correct": false
+            },
+            "op2": {
+                "id": "28b",
+                "title": "Say 'It was your fault'",
+                "correct": false
+            },
+            "op3": {
+                "id": "28c",
+                "title": "Say 'I'm sorry'",
+                "correct": true
+            },
+            "op4": {
+                "id": "28d",
+                "title": "Bump into them again",
+                "correct": false
+            }
+        }
+    },
+    "q29": {
+        "id": "29",
+        "title": "Different Abilities",
+        "description": "A new friend uses a wheelchair. How can you play together?",
+        "options": {
+            "op1": {
+                "id": "29a",
+                "title": "Ignore them because they're different",
+                "correct": false
+            },
+            "op2": {
+                "id": "29b",
+                "title": "Choose games everyone can play",
+                "correct": true
+            },
+            "op3": {
+                "id": "29c",
+                "title": "Tell them they can't play with you",
+                "correct": false
+            },
+            "op4": {
+                "id": "29d",
+                "title": "Always play running games",
+                "correct": false
+            }
+        }
+    },
+    "q30": {
+        "id": "30",
+        "title": "Waiting to Speak",
+        "description": "You want to tell your teacher something while she's talking to another adult. What should you do?",
+        "options": {
+            "op1": {
+                "id": "30a",
+                "title": "Interrupt loudly",
+                "correct": false
+            },
+            "op2": {
+                "id": "30b",
+                "title": "Pull on her clothes",
+                "correct": false
+            },
+            "op3": {
+                "id": "30c",
+                "title": "Wait quietly until she's finished talking",
+                "correct": true
+            },
+            "op4": {
+                "id": "30d",
+                "title": "Start crying so she notices you",
+                "correct": false
+            }
+        }
+    },
+    "q31": {
+        "id": "31",
+        "title": "Brushing Teeth",
+        "description": "When should you brush your teeth?",
+        "options": {
+            "op1": {
+                "id": "31a",
+                "title": "Only when you feel like it",
+                "correct": false
+            },
+            "op2": {
+                "id": "31b",
+                "title": "Morning and before bedtime",
+                "correct": true
+            },
+            "op3": {
+                "id": "31c",
+                "title": "Only on weekends",
+                "correct": false
+            },
+            "op4": {
+                "id": "31d",
+                "title": "Never",
+                "correct": false
+            }
+        }
+    },
+    "q32": {
+        "id": "32",
+        "title": "Pets and Animals",
+        "description": "You see a friendly dog on a leash. What should you do first?",
+        "options": {
+            "op1": {
+                "id": "32a",
+                "title": "Run up and grab the dog",
+                "correct": false
+            },
+            "op2": {
+                "id": "32b",
+                "title": "Pull the dog's tail",
+                "correct": false
+            },
+            "op3": {
+                "id": "32c",
+                "title": "Ask the owner if you can pet the dog",
+                "correct": true
+            },
+            "op4": {
+                "id": "32d",
+                "title": "Scream at the dog",
+                "correct": false
+            }
+        }
+    },
+    "q33": {
+        "id": "33",
+        "title": "Listening to Instructions",
+        "description": "Your teacher gives instructions for an art project. What should you do?",
+        "options": {
+            "op1": {
+                "id": "33a",
+                "title": "Start right away without listening",
+                "correct": false
+            },
+            "op2": {
+                "id": "33b",
+                "title": "Talk to your friends while she's talking",
+                "correct": false
+            },
+            "op3": {
+                "id": "33c",
+                "title": "Listen carefully, then start your project",
+                "correct": true
+            },
+            "op4": {
+                "id": "33d",
+                "title": "Use the materials for something else",
+                "correct": false
+            }
+        }
+    },
+    "q34": {
+        "id": "34",
+        "title": "Finding Something That's Not Yours",
+        "description": "You find a toy on the playground that isn't yours. What should you do?",
+        "options": {
+            "op1": {
+                "id": "34a",
+                "title": "Keep it and take it home",
+                "correct": false
+            },
+            "op2": {
+                "id": "34b",
+                "title": "Give it to a teacher or put it in the lost and found",
+                "correct": true
+            },
+            "op3": {
+                "id": "34c",
+                "title": "Hide it somewhere else",
+                "correct": false
+            },
+            "op4": {
+                "id": "34d",
+                "title": "Break it",
+                "correct": false
+            }
+        }
+    },
+    "q35": {
+        "id": "35",
+        "title": "Playing with Nature",
+        "description": "You're playing outside and see a small flower. What's the kind thing to do?",
+        "options": {
+            "op1": {
+                "id": "35a",
+                "title": "Pull it out of the ground",
+                "correct": false
+            },
+            "op2": {
+                "id": "35b",
+                "title": "Step on it",
+                "correct": false
+            },
+            "op3": {
+                "id": "35c",
+                "title": "Look at it carefully without picking it",
+                "correct": true
+            },
+            "op4": {
+                "id": "35d",
+                "title": "Throw dirt on it",
+                "correct": false
+            }
+        }
+    },
+    "q36": {
+        "id": "36",
+        "title": "Wearing Weather Clothes",
+        "description": "It's raining outside. What should you wear?",
+        "options": {
+            "op1": {
+                "id": "36a",
+                "title": "Just a t-shirt",
+                "correct": false
+            },
+            "op2": {
+                "id": "36b",
+                "title": "Raincoat and rain boots",
+                "correct": true
+            },
+            "op3": {
+                "id": "36c",
+                "title": "Swim shorts",
+                "correct": false
+            },
+            "op4": {
+                "id": "36d",
+                "title": "Nothing special",
+                "correct": false
+            }
+        }
+    },
+    "q37": {
+        "id": "37",
+        "title": "TV Time",
+        "description": "Your parent says it's time to turn off the TV, but you want to keep watching. What should you do?",
+        "options": {
+            "op1": {
+                "id": "37a",
+                "title": "Turn off the TV when asked",
+                "correct": true
+            },
+            "op2": {
+                "id": "37b",
+                "title": "Hide the remote control",
+                "correct": false
+            },
+            "op3": {
+                "id": "37c",
+                "title": "Scream and have a tantrum",
+                "correct": false
+            },
+            "op4": {
+                "id": "37d",
+                "title": "Pretend you didn't hear them",
+                "correct": false
+            }
+        }
+    },
+    "q38": {
+        "id": "38",
+        "title": "Different Languages",
+        "description": "You meet a child who speaks a different language. What could you do?",
+        "options": {
+            "op1": {
+                "id": "38a",
+                "title": "Laugh at how they talk",
+                "correct": false
+            },
+            "op2": {
+                "id": "38b",
+                "title": "Smile and share toys to play together",
+                "correct": true
+            },
+            "op3": {
+                "id": "38c",
+                "title": "Ignore them completely",
+                "correct": false
+            },
+            "op4": {
+                "id": "38d",
+                "title": "Tell them to speak like you",
+                "correct": false
+            }
+        }
+    },
+    "q39": {
+        "id": "39",
+        "title": "When You Feel Scared",
+        "description": "You feel scared during a thunderstorm. What could help?",
+        "options": {
+            "op1": {
+                "id": "39a",
+                "title": "Hide under the bed alone",
+                "correct": false
+            },
+            "op2": {
+                "id": "39b",
+                "title": "Find a grown-up for comfort",
+                "correct": true
+            },
+            "op3": {
+                "id": "39c",
+                "title": "Scream as loud as the thunder",
+                "correct": false
+            },
+            "op4": {
+                "id": "39d",
+                "title": "Break your toys",
+                "correct": false
+            }
+        }
+    },
+    "q40": {
+        "id": "40",
+        "title": "When a Friend is Happy",
+        "description": "Your friend won a game and is very happy. What could you say?",
+        "options": {
+            "op1": {
+                "id": "40a",
+                "title": "Say 'I didn't want to win anyway'",
+                "correct": false
+            },
+            "op2": {
+                "id": "40b",
+                "title": "Say 'You cheated'",
+                "correct": false
+            },
+            "op3": {
+                "id": "40c",
+                "title": "Say 'Congratulations! Good job!'",
+                "correct": true
+            },
+            "op4": {
+                "id": "40d",
+                "title": "Walk away without saying anything",
+                "correct": false
+            }
+        }
+    }
+}
