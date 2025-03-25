@@ -2,12 +2,24 @@ from fastapi import FastAPI, HTTPException, Query
 from typing import List, Optional, Dict, Any
 import json
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Autistic Kids App API",
     description="API for serving scenario-based questions for autistic children",
     version="1.0.0"
 )
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Load scenarios from the JSON file
 try:
@@ -74,7 +86,7 @@ async def get_scenario(question_id: str):
     Returns the full scenario data including title, description, and options.
     """
     # Find the scenario with the matching ID
-    scenario = scenarios_data.get(question_id)
+    scenario = scenarios_data.get(f"q{question_id}")
     if scenario:
         return scenario
     raise HTTPException(status_code=404, detail=f"Scenario with ID {question_id} not found")
@@ -82,4 +94,4 @@ async def get_scenario(question_id: str):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="localhost", port=8000)

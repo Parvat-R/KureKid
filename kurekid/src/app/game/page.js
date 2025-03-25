@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import './App.css';
 
 export default function Page() {
     const [questions, setQuestions] = useState([]);
@@ -11,10 +12,12 @@ export default function Page() {
                 // Fetch all question IDs
                 const res = await fetch("http://localhost:8000/scenario/all");
                 const questionIds = await res.json();
+                console.log(questionIds);
 
                 // Fetch question details (title) for each ID
                 const questionDetails = await Promise.all(
                     questionIds.map(async (id, index) => {
+                        console.log(id);
                         const qRes = await fetch(`http://localhost:8000/scenario/${id}`);
                         const qData = await qRes.json();
                         console.log(qRes)

@@ -1,0 +1,287 @@
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+    background-color: #f0f4ff;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.p-6 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 255, 0.1);
+    border: 6px solid #4ecdc4;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Playful background decoration */
+.p-6::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 105, 180, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.p-6::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mt-2 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.mt-4 {
+    text-align: center;
+    color: #2980b9;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    border: 3px solid #3498db;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option:active {
+    transform: scale(0.95);
+}
+
+.option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.5s;
+}
+
+.option:hover::before {
+    left: 100%;
+}
+
+/* Vibrant hover colors */
+.option:nth-child(1):hover {
+    background-color: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.option:nth-child(2):hover {
+    background-color: #4ecdc4;
+    color: white;
+    border-color: #4ecdc4;
+}
+
+.option:nth-child(3):hover {
+    background-color: #45b7d1;
+    color: white;
+    border-color: #45b7d1;
+}
+
+.option:nth-child(4):hover {
+    background-color: #fdcb6e;
+    color: white;
+    border-color: #fdcb6e;
+}
+
+/* Loading state */
+p {
+    text-align: center;
+    color: #2980b9;
+    font-size: 1.2rem;
+    font-style: italic;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@media (max-width: 600px) {
+    .p-6 {
+        padding: 1rem;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .option {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Transition and Celebration Styles */
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 204, 113, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 1s ease-out;
+}
+
+.celebration-message {
+    font-size: 3rem;
+    color: #2ecc71;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    animation: bounce 1s ease-in-out;
+}
+
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(135deg, #ff6b6b 25%, transparent 25%),
+        linear-gradient(225deg, #4ecdc4 25%, transparent 25%),
+        linear-gradient(45deg, #fdcb6e 25%, transparent 25%),
+        linear-gradient(315deg, #3498db 25%, transparent 25%);
+    background-size: 30px 30px;
+    background-position: 0 0, 0 0, 0 0, 0 0;
+    animation: confetti 1s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes confetti {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 30px 30px, 30px 30px, 30px 30px, 30px 30px;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.correct-answer {
+    transition: all 0.5s ease;
+    filter: brightness(1.2);
+}
+
+.transition-out {
+    animation: slideOut 1s forwards;
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+/* Wrong Answer Shake Animation */
+.wrong-answer {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* Optional: Add a red tint for wrong answers */
+.wrong-answer {
+    background-color: rgba(255, 0, 0, 0.05);
+    border: 2px solid rgba(255, 0, 0, 0.2);
+}
