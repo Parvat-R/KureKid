@@ -1,9 +1,7 @@
-from .models import BaseModel
-from .utils import hash_password, check_password
-from tortoise import fields
+from tortoise import fields, Model
 from tortoise.exceptions import DoesNotExist
 
-class Option(BaseModel):
+class Option(Model):
     """
     Option model
     """
@@ -56,17 +54,15 @@ class Option(BaseModel):
 
     @classmethod
     async def get_correct_option(cls, question_id: int):
-        option = await cls.get(question_id=question_id, is_correct=True)
-        return option
+        try:
+            option = await cls.get(question_id=question_id, is_correct=True)
+            return option
+        except DoesNotExist:
+            return None
 
     @classmethod
     async def get_incorrect_options(cls, question_id: int):
         options = await cls.filter(question_id=question_id, is_correct=False)
-        return options
-
-    @classmethod
-    async def get_all_options(cls):
-        options = await cls.all()
         return options
 
     @classmethod
@@ -76,10 +72,16 @@ class Option(BaseModel):
 
     @classmethod
     async def get_option_by_question_and_option(cls, question_id: int, option: str):
-        option = await cls.get(question_id=question_id, option=option)
-        return option
+        try:
+            option = await cls.get(question_id=question_id, option=option)
+            return option
+        except DoesNotExist:
+            return None
 
     @classmethod
     async def get_option_by_question_and_is_correct(cls, question_id: int, is_correct: bool):
-        option = await cls.get(question_id=question_id, is_correct=is_correct)
-        return option
+        try:
+            option = await cls.get(question_id=question_id, is_correct=is_correct)
+            return option
+        except DoesNotExist:
+            return None

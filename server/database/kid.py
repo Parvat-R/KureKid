@@ -1,9 +1,7 @@
-from .models import BaseModel
-from .utils import hash_password, check_password
-from tortoise import fields
+from tortoise import fields, Model
 from tortoise.exceptions import DoesNotExist
 
-class Kid(BaseModel):
+class Kid(Model):
     """
     Kid model for storing child information using Tortoise ORM
     
@@ -57,7 +55,7 @@ class Kid(BaseModel):
         try:
             return await cls.filter(user_id=user_id)
         except DoesNotExist:
-            return None
+            return []
 
     @classmethod
     async def get_all_kids(cls):

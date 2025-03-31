@@ -1,5 +1,5 @@
 from .models import BaseModel
-from .utils import hash_password, check_password
+from .utils import hash_password, check_password, generate_session_id
 from tortoise import fields
 from tortoise.exceptions import DoesNotExist
 from typing import Optional
@@ -9,13 +9,13 @@ class Session(BaseModel):
     user = fields.ForeignKeyField('models.User', related_name='sessions', description="The user this session belongs to")
     session_id = fields.CharField(max_length=255, unique=True, index=True, description="Unique session identifier")
     is_active = fields.BooleanField(default=True, description="Whether the session is currently active")
-    created_at = fields.DatetimeField(auto_add_now=True, description="When the session was created")
+    created_at = fields.DatetimeField(auto_now_add=True, description="When the session was created")  # Fixed auto_add_now to auto_now_add
     expires_at = fields.DatetimeField(null=True, description="When the session expires")
     last_activity = fields.DatetimeField(auto_now=True, description="Last activity timestamp")
 
     class Meta:
         table = "sessions"
-        indexes = ("session_id", "user_id", "is_active")
+        indexes = (("session_id", "user_id", "is_active"),)  # Fixed tuple syntax
 
     async def save(self, *args, **kwargs):
         if not self.expires_at:
@@ -35,7 +35,7 @@ class Session(BaseModel):
         return self
 
     @classmethod
-    async def create_session(cls, user: "User", session_id: str, expires_in: Optional[timedelta] = None) -> "Session":
+    async def create_session(cls, user: "User", expires_in: Optional[timedelta] = None) -> "Session":
         """
         Create a new session for a user in the database
         
@@ -44,6 +44,7 @@ class Session(BaseModel):
             session_id: Unique session identifier
             expires_in: Optional duration until session expires
         """
+        session_id = generate_session_id(user.id)
         expires_at = datetime.utcnow() + (expires_in or timedelta(days=7))
         session = await cls.create(
             user=user,
@@ -62,7 +63,7 @@ class Session(BaseModel):
                 session_id=session_id,
                 is_active=True,
                 expires_at__gt=datetime.utcnow()
-            )
+            ).prefetch_related('user')  # Added prefetch_related for better performance
             return session
         except DoesNotExist:
             return None

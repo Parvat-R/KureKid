@@ -1,9 +1,9 @@
-from .models import BaseModel
-from .utils import hash_password, check_password
-from tortoise import fields
+from tortoise import fields, Model
 from tortoise.exceptions import DoesNotExist
+from .utils import hash_password, check_password
 
-class User(BaseModel):
+class User(Model):
+    id = fields.IntField(pk=True)
     username = fields.CharField(max_length=255, unique=True)
     email = fields.CharField(max_length=255, unique=True)
     password = fields.CharField(max_length=255)
@@ -11,7 +11,7 @@ class User(BaseModel):
     
     class Meta:
         table = "users"
-        indexes = ("username", "email")
+        indexes = (("username", "email"),)
     
     @classmethod
     async def create_user(cls, username: str, email: str, password: str) -> "User":
@@ -21,7 +21,7 @@ class User(BaseModel):
         user = await cls.create(
             username=username,
             email=email,
-            password=hash(password)
+            password=hash_password(password)
         )
         return user
     
@@ -90,7 +90,7 @@ class User(BaseModel):
         if email:
             user.email = email
         if password:
-            user.password = hash(password)
+            user.password = hash_password(password)
         await user.save()
         return user
     
@@ -101,7 +101,6 @@ class User(BaseModel):
         """
         user = await cls.get(id=user_id)
         await user.delete()
-        return
     
     @classmethod
     async def authenticate_user(cls, username: str, password: str) -> "User":

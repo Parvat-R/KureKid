@@ -1,9 +1,7 @@
-from .models import BaseModel
-from .utils import hash_password, check_password
-from tortoise import fields
+from tortoise import fields, Model
 from tortoise.exceptions import DoesNotExist
 
-class Question(BaseModel):
+class Question(Model):
     id = fields.IntField(pk=True)
     title = fields.CharField(max_length=255)
     description = fields.TextField()
@@ -47,7 +45,5 @@ class Question(BaseModel):
     @classmethod
     async def delete_question(cls, question_id: int):
         question = await cls.get(id=question_id)
-        await question.delete(
-           delete_related=True
-        )
+        await question.delete()
         return question
