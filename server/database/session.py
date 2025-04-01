@@ -12,6 +12,9 @@ class Session(BaseModel):
     created_at = fields.DatetimeField(auto_now_add=True, description="When the session was created")  # Fixed auto_add_now to auto_now_add
     expires_at = fields.DatetimeField(null=True, description="When the session expires")
     last_activity = fields.DatetimeField(auto_now=True, description="Last activity timestamp")
+    device = fields.CharField(max_length=255, null=True, description="Device identifier")
+    otp = fields.IntField(null=True, description="One-time password")
+    otp_verified = fields.BooleanField(default=False, description="Whether OTP has been verified")
 
     class Meta:
         table = "sessions"
@@ -35,7 +38,7 @@ class Session(BaseModel):
         return self
 
     @classmethod
-    async def create_session(cls, user: "User", expires_in: Optional[timedelta] = None) -> "Session":
+    async def create_session(cls, user: "User", expires_in: Optional[timedelta] = None, device: Optional[str] = None) -> "Session":
         """
         Create a new session for a user in the database
         
@@ -43,13 +46,15 @@ class Session(BaseModel):
             user: The user to create the session for
             session_id: Unique session identifier
             expires_in: Optional duration until session expires
+            device: Optional device identifier
         """
         session_id = generate_session_id(user.id)
         expires_at = datetime.utcnow() + (expires_in or timedelta(days=7))
         session = await cls.create(
             user=user,
             session_id=session_id,
-            expires_at=expires_at
+            expires_at=expires_at,
+            device=device
         )
         return session
 
@@ -67,6 +72,57 @@ class Session(BaseModel):
             return session
         except DoesNotExist:
             return None
+
+    @classmethod
+    async def get_otp(cls, session_id: str) -> Optional[int]:
+        """
+        Get the OTP for a session
+        """
+        try:
+            session = await cls.get(session_id=session_id)
+            return session.otp
+        except DoesNotExist:
+            return None
+
+    @classmethod
+    async def update_otp(cls, session_id: str, new_otp: int) -> bool:
+        """
+        Update the OTP for a session
+        """
+        try:
+            session = await cls.get(session_id=session_id)
+            session.otp = new_otp
+            session.otp_verified = False
+            await session.save()
+            return True
+        except DoesNotExist:
+            return False
+
+    @classmethod
+    async def verify_otp(cls, session_id: str, otp: int) -> bool:
+        """
+        Verify the OTP for a session
+        """
+        try:
+            session = await cls.get(session_id=session_id)
+            if session.otp == otp:
+                session.otp_verified = True
+                await session.save()
+                return True
+            return False
+        except DoesNotExist:
+            return False
+
+    @classmethod
+    async def is_otp_verified(cls, session_id: str) -> bool:
+        """
+        Check if OTP has been verified for a session
+        """
+        try:
+            session = await cls.get(session_id=session_id)
+            return session.otp_verified
+        except DoesNotExist:
+            return False
 
     @classmethod
     async def delete_session(cls, session_id: str) -> None:

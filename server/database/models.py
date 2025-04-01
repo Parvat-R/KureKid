@@ -3,7 +3,7 @@ from .session import Session
 from .question import Question
 from .option import Option
 from .kid import Kid
-from .studentinteraction import StudentInteraction
+from .kidinteraction import KidInteraction
 
 __all__ = [
     "User",
@@ -11,5 +11,5 @@ __all__ = [
     "Question",
     "Option",
     "Kid",
-    "StudentInteraction"
+    "KidInteraction"
 ]

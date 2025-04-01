@@ -2,7 +2,7 @@ from tortoise import fields
 from tortoise.models import Model
 from tortoise.exceptions import DoesNotExist
 
-class StudentInteraction(Model):
+class KidInteraction(Model):
     id = fields.IntField(pk=True)
     kid_id = fields.IntField()
     question_id = fields.IntField()

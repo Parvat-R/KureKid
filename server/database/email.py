@@ -3,7 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-def send_message(to_email: str, otp: str) -> None:
+def send_otp(to_email: str, otp: str) -> None:
     """
     Send an email with OTP to the specified email address
     
