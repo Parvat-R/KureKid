@@ -39,3 +39,11 @@ class KidToQuestionScore(BaseModel):
     question_id: int
     score: int
 
+class Session(BaseModel):
+    session_id: str
+    created_on: date
+    parent_id: int
+    otp: int
+    device: str
+
+
