@@ -15,7 +15,7 @@ class Kid(Model):
     user_kids = await Kid.filter(user_id=user_id)
     """
     
-    id = fields.UUIDField(pk=True)
+    id = fields.UUIDField(primary_key=True)
     name = fields.CharField(max_length=50)
     gender = fields.CharField(max_length=10)
     user = fields.ForeignKeyField('models.User', related_name='kids')

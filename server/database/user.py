@@ -3,7 +3,7 @@ from tortoise.exceptions import DoesNotExist
 from .utils import hash_password, check_password
 
 class User(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     username = fields.CharField(max_length=255, unique=True)
     email = fields.CharField(max_length=255, unique=True)
     password = fields.CharField(max_length=255)

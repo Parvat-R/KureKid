@@ -1,13 +1,14 @@
-from .models import BaseModel
+from tortoise.models import Model
 from .utils import hash_password, check_password, generate_session_id
 from tortoise import fields
 from tortoise.exceptions import DoesNotExist
 from typing import Optional
 from datetime import datetime, timedelta
 
-class Session(BaseModel):
+class Session(Model):
+    id = fields.IntField(primary_key=True)
     user = fields.ForeignKeyField('models.User', related_name='sessions', description="The user this session belongs to")
-    session_id = fields.CharField(max_length=255, unique=True, index=True, description="Unique session identifier")
+    session_id = fields.CharField(max_length=255, unique=True, db_index=True, description="Unique session identifier")
     is_active = fields.BooleanField(default=True, description="Whether the session is currently active")
     created_at = fields.DatetimeField(auto_now_add=True, description="When the session was created")  # Fixed auto_add_now to auto_now_add
     expires_at = fields.DatetimeField(null=True, description="When the session expires")

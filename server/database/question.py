@@ -2,11 +2,10 @@ from tortoise import fields, Model
 from tortoise.exceptions import DoesNotExist
 
 class Question(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     title = fields.CharField(max_length=255)
     description = fields.TextField()
-    options = fields.ManyToManyField("models.Option", related_name="questions")
-    
+
     class Meta:
         table = "questions"
         indexes = ("id",)

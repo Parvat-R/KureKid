@@ -1,17 +1,17 @@
 import json
-from fastapi import FastAPI, HTTPException, Cookie
+from fastapi import APIRouter, HTTPException, Cookie
 from typing import Optional
 from database.kidinteraction import KidInteraction
 from fastapi import Depends
 from database.session import Session
 
-app = FastAPI()
+router = APIRouter()
 
 def load_scenarios():
     with open('scenarios.json', 'r') as f:
         return json.load(f)
 
-@app.get("/questions")
+@router.get("/questions")
 async def get_all_questions():
     try:
         scenarios = load_scenarios()
@@ -19,7 +19,7 @@ async def get_all_questions():
     except Exception as e:
         raise HTTPException(status_code=500, detail="Error loading scenarios")
 
-@app.get("/question/{question_id}")
+@router.get("/question/{question_id}")
 async def get_question(question_id: str):
     try:
         scenarios = load_scenarios()
@@ -34,7 +34,7 @@ async def get_question(question_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail="Error retrieving question")
 
-@app.post("/answer/{question_id}")
+@router.post("/answer/{question_id}")
 async def submit_answer(
     question_id: str, 
     option_id: str, 
@@ -78,7 +78,7 @@ async def submit_answer(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/progress/{kid_id}")
+@router.get("/progress/{kid_id}")
 async def get_progress(kid_id: int):
     try:
         interactions = await KidInteraction.get_interactions_by_kid(kid_id)

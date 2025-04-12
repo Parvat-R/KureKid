@@ -1,15 +1,15 @@
 from database.models import User, Session
 from database.email import send_otp
-from database.utils import generate_otp
-from fastapi import FastAPI
+from database.utils import generate_otp, hash_password
+from fastapi import APIRouter
 
-app = FastAPI()
+router = APIRouter()
 
-@app.get("/")
+@router.get("/")
 async def root():
     return {"message": "Hello Auth!"}
 
-@app.post("/login")
+@router.post("/login")
 async def login(username: str, password: str):
     user = await User.get(username=username)
     if user and user.verify_password(password):
@@ -20,7 +20,7 @@ async def login(username: str, password: str):
     else:
         return {"error": "Invalid username or password"}
 
-@app.get("/logout")
+@router.get("/logout")
 async def logout(session_id: str):
     session = await Session.get(id=session_id)
     if session:
@@ -30,7 +30,7 @@ async def logout(session_id: str):
         return {"error": "Invalid session ID"}
     
 
-@app.post("/signup")
+@router.post("/signup")
 async def signup(username: str, email: str, password: str):
     if User.exists(username=username):
         return {"error": "Username already exists"}
@@ -52,7 +52,7 @@ async def signup(username: str, email: str, password: str):
     }
 
 
-@app.post("/verify")
+@router.post("/verify")
 async def verify(username: str, session_id: str, otp: str):
     user = User.get_user_by_username(username)
     session = Session.get_session(session_id)
@@ -61,7 +61,7 @@ async def verify(username: str, session_id: str, otp: str):
     else:
         return {"error": "Invalid OTP"}
 
-@app.get("/resentotp")
+@router.get("/resentotp")
 async def resend_otp(username: str, session_id: str):
     otp = generate_otp()
     user = User.get_user_by_username(username)

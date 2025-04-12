@@ -3,18 +3,21 @@ import database
 from database import models, init_db
 from tortoise import Tortoise, run_async
 import time
+from endpoints import auth, scenario
 
 app = FastAPI()
 
-# Startup event to initialize database
-@app.on_event("startup")
-async def startup_event():
-    await init_db()
+from contextlib import asynccontextmanager
 
-# Shutdown event to close database connections
-@app.on_event("shutdown")
-async def shutdown_event():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup: initialize database
+    await init_db()
+    yield
+    # Shutdown: close database connections
     await Tortoise.close_connections()
+
+app = FastAPI(lifespan=lifespan)
 
 
 @app.middleware("http")
@@ -29,3 +32,8 @@ async def add_process_time_header(request: Request, call_next):
 @app.get("/")
 async def index():
     return {"Hello": "World"}
+
+# Include routers
+app.include_router(auth.router, prefix="/auth")
+app.include_router(scenario.router, prefix="/scenario")
+

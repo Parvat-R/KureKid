@@ -3,7 +3,7 @@ from tortoise.models import Model
 from tortoise.exceptions import DoesNotExist
 
 class KidInteraction(Model):
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     kid_id = fields.IntField()
     question_id = fields.IntField()
     option_id = fields.IntField()

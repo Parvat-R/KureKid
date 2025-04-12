@@ -5,7 +5,7 @@ class Option(Model):
     """
     Option model
     """
-    id = fields.IntField(pk=True)
+    id = fields.IntField(primary_key=True)
     option = fields.CharField(max_length=255)
     is_correct = fields.BooleanField(default=False)
     question = fields.ForeignKeyField("models.Question", related_name="options")
